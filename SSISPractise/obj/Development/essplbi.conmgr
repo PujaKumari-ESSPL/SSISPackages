@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="essplbi"
+  DTS:DTSID="{0CB3EDEA-891A-4A59-8E38-8C0AACA0BE43}"
+  DTS:CreationName="ODBC">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="server=essplbi;Driver={SQL Server};trusted_connection=Yes;app=Microsoft® Visual Studio®;wsid=PUJALTOP;database=Test;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,3255 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/11/2019 5:10:51 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PUJALTOP"
+  DTS:CreatorName="ESSBBSR\pujakumari"
+  DTS:DTSID="{AA4F0630-16BD-48A0-A6BA-DF1F6BE69C80}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="MergeTrans"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{7750A1BC-58F1-409B-8B1D-47FBC3396D5E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{0B9751CE-262B-40A7-9246-9FA44710BC77}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\2000"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="2000"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DataGT2000]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\2000.Connections[OleDbConnection]"
+                  connectionManagerID="{C61D7E43-EADB-4274-B4E4-FE6A3F5B0459}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[PUJALTOP_BILearning]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].ExternalColumns[EnglishProductName]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[EnglishProductName]"
+                      name="EnglishProductName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[Color]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].ExternalColumns[Color]"
+                      length="15"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[Color]"
+                      name="Color"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[SalesOrderNumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].ExternalColumns[SalesOrderNumber]"
+                      length="20"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[SalesOrderNumber]"
+                      name="SalesOrderNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[UnitPrice]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[UnitPrice]"
+                      name="UnitPrice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[ExtendedAmount]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].ExternalColumns[ExtendedAmount]"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[ExtendedAmount]"
+                      name="ExtendedAmount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[ProductStandardCost]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].ExternalColumns[ProductStandardCost]"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[ProductStandardCost]"
+                      name="ProductStandardCost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[TotalProductCost]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].ExternalColumns[TotalProductCost]"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[TotalProductCost]"
+                      name="TotalProductCost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[SalesAmount]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].ExternalColumns[SalesAmount]"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[SalesAmount]"
+                      name="SalesAmount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[TaxAmt]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].ExternalColumns[TaxAmt]"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[TaxAmt]"
+                      name="TaxAmt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[Freight]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].ExternalColumns[Freight]"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[Freight]"
+                      name="Freight"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].ExternalColumns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].ExternalColumns[Color]"
+                      dataType="wstr"
+                      length="15"
+                      name="Color" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].ExternalColumns[SalesOrderNumber]"
+                      dataType="wstr"
+                      length="20"
+                      name="SalesOrderNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].ExternalColumns[ExtendedAmount]"
+                      dataType="cy"
+                      name="ExtendedAmount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].ExternalColumns[ProductStandardCost]"
+                      dataType="cy"
+                      name="ProductStandardCost" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].ExternalColumns[TotalProductCost]"
+                      dataType="cy"
+                      name="TotalProductCost" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].ExternalColumns[SalesAmount]"
+                      dataType="cy"
+                      name="SalesAmount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].ExternalColumns[TaxAmt]"
+                      dataType="cy"
+                      name="TaxAmt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].ExternalColumns[Freight]"
+                      dataType="cy"
+                      name="Freight" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[EnglishProductName]"
+                      name="EnglishProductName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[Color]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[Color]"
+                      name="Color" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[SalesOrderNumber]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[SalesOrderNumber]"
+                      name="SalesOrderNumber" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
+                      name="UnitPrice" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[ExtendedAmount]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[ExtendedAmount]"
+                      name="ExtendedAmount" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[ProductStandardCost]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[ProductStandardCost]"
+                      name="ProductStandardCost" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[TotalProductCost]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[TotalProductCost]"
+                      name="TotalProductCost" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[SalesAmount]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[SalesAmount]"
+                      name="SalesAmount" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[TaxAmt]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[TaxAmt]"
+                      name="TaxAmt" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[Freight]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[Freight]"
+                      name="Freight" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\400"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="400"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DataLT400]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\400.Connections[OleDbConnection]"
+                  connectionManagerID="{C61D7E43-EADB-4274-B4E4-FE6A3F5B0459}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[PUJALTOP_BILearning]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\400.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].ExternalColumns[EnglishProductName]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[EnglishProductName]"
+                      name="EnglishProductName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[Color]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].ExternalColumns[Color]"
+                      length="15"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[Color]"
+                      name="Color"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[SalesOrderNumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].ExternalColumns[SalesOrderNumber]"
+                      length="20"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[SalesOrderNumber]"
+                      name="SalesOrderNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[UnitPrice]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[UnitPrice]"
+                      name="UnitPrice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[ExtendedAmount]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].ExternalColumns[ExtendedAmount]"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[ExtendedAmount]"
+                      name="ExtendedAmount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[ProductStandardCost]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].ExternalColumns[ProductStandardCost]"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[ProductStandardCost]"
+                      name="ProductStandardCost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[TotalProductCost]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].ExternalColumns[TotalProductCost]"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[TotalProductCost]"
+                      name="TotalProductCost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[SalesAmount]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].ExternalColumns[SalesAmount]"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[SalesAmount]"
+                      name="SalesAmount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[TaxAmt]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].ExternalColumns[TaxAmt]"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[TaxAmt]"
+                      name="TaxAmt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[Freight]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].ExternalColumns[Freight]"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[Freight]"
+                      name="Freight"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].ExternalColumns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].ExternalColumns[Color]"
+                      dataType="wstr"
+                      length="15"
+                      name="Color" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].ExternalColumns[SalesOrderNumber]"
+                      dataType="wstr"
+                      length="20"
+                      name="SalesOrderNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].ExternalColumns[ExtendedAmount]"
+                      dataType="cy"
+                      name="ExtendedAmount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].ExternalColumns[ProductStandardCost]"
+                      dataType="cy"
+                      name="ProductStandardCost" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].ExternalColumns[TotalProductCost]"
+                      dataType="cy"
+                      name="TotalProductCost" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].ExternalColumns[SalesAmount]"
+                      dataType="cy"
+                      name="SalesAmount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].ExternalColumns[TaxAmt]"
+                      dataType="cy"
+                      name="TaxAmt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].ExternalColumns[Freight]"
+                      dataType="cy"
+                      name="Freight" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[EnglishProductName]"
+                      name="EnglishProductName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[Color]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[Color]"
+                      name="Color" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[SalesOrderNumber]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[SalesOrderNumber]"
+                      name="SalesOrderNumber" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
+                      name="UnitPrice" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[ExtendedAmount]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[ExtendedAmount]"
+                      name="ExtendedAmount" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[ProductStandardCost]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[ProductStandardCost]"
+                      name="ProductStandardCost" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[TotalProductCost]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[TotalProductCost]"
+                      name="TotalProductCost" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[SalesAmount]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[SalesAmount]"
+                      name="SalesAmount" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[TaxAmt]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[TaxAmt]"
+                      name="TaxAmt" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[Freight]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[Freight]"
+                      name="Freight" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\400_2000"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="400_2000"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DataBet400N2000]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\400_2000.Connections[OleDbConnection]"
+                  connectionManagerID="{C61D7E43-EADB-4274-B4E4-FE6A3F5B0459}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[PUJALTOP_BILearning]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].ExternalColumns[EnglishProductName]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[EnglishProductName]"
+                      name="EnglishProductName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[Color]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].ExternalColumns[Color]"
+                      length="15"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[Color]"
+                      name="Color"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[SalesOrderNumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].ExternalColumns[SalesOrderNumber]"
+                      length="20"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[SalesOrderNumber]"
+                      name="SalesOrderNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[UnitPrice]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[UnitPrice]"
+                      name="UnitPrice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[ExtendedAmount]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].ExternalColumns[ExtendedAmount]"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[ExtendedAmount]"
+                      name="ExtendedAmount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[ProductStandardCost]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].ExternalColumns[ProductStandardCost]"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[ProductStandardCost]"
+                      name="ProductStandardCost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[TotalProductCost]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].ExternalColumns[TotalProductCost]"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[TotalProductCost]"
+                      name="TotalProductCost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[SalesAmount]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].ExternalColumns[SalesAmount]"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[SalesAmount]"
+                      name="SalesAmount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[TaxAmt]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].ExternalColumns[TaxAmt]"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[TaxAmt]"
+                      name="TaxAmt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[Freight]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].ExternalColumns[Freight]"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[Freight]"
+                      name="Freight"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].ExternalColumns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].ExternalColumns[Color]"
+                      dataType="wstr"
+                      length="15"
+                      name="Color" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].ExternalColumns[SalesOrderNumber]"
+                      dataType="wstr"
+                      length="20"
+                      name="SalesOrderNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].ExternalColumns[ExtendedAmount]"
+                      dataType="cy"
+                      name="ExtendedAmount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].ExternalColumns[ProductStandardCost]"
+                      dataType="cy"
+                      name="ProductStandardCost" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].ExternalColumns[TotalProductCost]"
+                      dataType="cy"
+                      name="TotalProductCost" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].ExternalColumns[SalesAmount]"
+                      dataType="cy"
+                      name="SalesAmount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].ExternalColumns[TaxAmt]"
+                      dataType="cy"
+                      name="TaxAmt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].ExternalColumns[Freight]"
+                      dataType="cy"
+                      name="Freight" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[EnglishProductName]"
+                      name="EnglishProductName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[Color]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[Color]"
+                      name="Color" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[SalesOrderNumber]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[SalesOrderNumber]"
+                      name="SalesOrderNumber" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
+                      name="UnitPrice" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[ExtendedAmount]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[ExtendedAmount]"
+                      name="ExtendedAmount" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[ProductStandardCost]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[ProductStandardCost]"
+                      name="ProductStandardCost" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[TotalProductCost]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[TotalProductCost]"
+                      name="TotalProductCost" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[SalesAmount]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[SalesAmount]"
+                      name="SalesAmount" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[TaxAmt]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[TaxAmt]"
+                      name="TaxAmt" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[Freight]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[Freight]"
+                      name="Freight" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Merge"
+              componentClassID="Microsoft.Merge"
+              contactInfo="Merge;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple sorted data flows into one sorted data flow. Unlike the Merge Join, all rows flow to the output. For example, combine two sorted lists of customers into a single sorted list. If sorting is not important, use the Union All transformation. "
+              name="Merge"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Merge.Inputs[Merge Input 1]"
+                  name="Merge Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge.Inputs[Merge Input 1].Columns[EnglishProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[EnglishProductName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[EnglishProductName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge.Inputs[Merge Input 1].Columns[Color]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Color"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Color]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[Color]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge.Inputs[Merge Input 1].Columns[SalesOrderNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="SalesOrderNumber"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[SalesOrderNumber]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[SalesOrderNumber]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge.Inputs[Merge Input 1].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[UnitPrice]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[UnitPrice]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge.Inputs[Merge Input 1].Columns[ExtendedAmount]"
+                      cachedDataType="cy"
+                      cachedName="ExtendedAmount"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[ExtendedAmount]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[ExtendedAmount]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge.Inputs[Merge Input 1].Columns[ProductStandardCost]"
+                      cachedDataType="cy"
+                      cachedName="ProductStandardCost"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[ProductStandardCost]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[ProductStandardCost]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge.Inputs[Merge Input 1].Columns[TotalProductCost]"
+                      cachedDataType="cy"
+                      cachedName="TotalProductCost"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[TotalProductCost]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[TotalProductCost]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge.Inputs[Merge Input 1].Columns[SalesAmount]"
+                      cachedDataType="cy"
+                      cachedName="SalesAmount"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[SalesAmount]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[SalesAmount]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge.Inputs[Merge Input 1].Columns[TaxAmt]"
+                      cachedDataType="cy"
+                      cachedName="TaxAmt"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[TaxAmt]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[TaxAmt]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge.Inputs[Merge Input 1].Columns[Freight]"
+                      cachedDataType="cy"
+                      cachedName="Freight"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Freight]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[Freight]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\Merge.Inputs[Merge Input 2]"
+                  name="Merge Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge.Inputs[Merge Input 2].Columns[EnglishProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[EnglishProductName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[EnglishProductName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge.Inputs[Merge Input 2].Columns[Color]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Color"
+                      lineageId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[Color]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[Color]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge.Inputs[Merge Input 2].Columns[SalesOrderNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="SalesOrderNumber"
+                      lineageId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[SalesOrderNumber]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[SalesOrderNumber]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge.Inputs[Merge Input 2].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      lineageId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[UnitPrice]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[UnitPrice]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge.Inputs[Merge Input 2].Columns[ExtendedAmount]"
+                      cachedDataType="cy"
+                      cachedName="ExtendedAmount"
+                      lineageId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[ExtendedAmount]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[ExtendedAmount]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge.Inputs[Merge Input 2].Columns[ProductStandardCost]"
+                      cachedDataType="cy"
+                      cachedName="ProductStandardCost"
+                      lineageId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[ProductStandardCost]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[ProductStandardCost]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge.Inputs[Merge Input 2].Columns[TotalProductCost]"
+                      cachedDataType="cy"
+                      cachedName="TotalProductCost"
+                      lineageId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[TotalProductCost]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[TotalProductCost]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge.Inputs[Merge Input 2].Columns[SalesAmount]"
+                      cachedDataType="cy"
+                      cachedName="SalesAmount"
+                      lineageId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[SalesAmount]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[SalesAmount]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge.Inputs[Merge Input 2].Columns[TaxAmt]"
+                      cachedDataType="cy"
+                      cachedName="TaxAmt"
+                      lineageId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[TaxAmt]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[TaxAmt]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge.Inputs[Merge Input 2].Columns[Freight]"
+                      cachedDataType="cy"
+                      cachedName="Freight"
+                      lineageId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[Freight]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[Freight]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Merge.Outputs[Merge Output 1]"
+                  isSorted="true"
+                  name="Merge Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[EnglishProductName]"
+                      name="EnglishProductName"
+                      sortKeyPosition="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[Color]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[Color]"
+                      name="Color" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[SalesOrderNumber]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[SalesOrderNumber]"
+                      name="SalesOrderNumber" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[UnitPrice]"
+                      name="UnitPrice" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[ExtendedAmount]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[ExtendedAmount]"
+                      name="ExtendedAmount" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[ProductStandardCost]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[ProductStandardCost]"
+                      name="ProductStandardCost" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[TotalProductCost]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[TotalProductCost]"
+                      name="TotalProductCost" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[SalesAmount]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[SalesAmount]"
+                      name="SalesAmount" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[TaxAmt]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[TaxAmt]"
+                      name="TaxAmt" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[Freight]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[Freight]"
+                      name="Freight" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Merge 1"
+              componentClassID="Microsoft.Merge"
+              contactInfo="Merge;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple sorted data flows into one sorted data flow. Unlike the Merge Join, all rows flow to the output. For example, combine two sorted lists of customers into a single sorted list. If sorting is not important, use the Union All transformation. "
+              name="Merge 1"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 1]"
+                  name="Merge Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 1].Columns[EnglishProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[EnglishProductName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[EnglishProductName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 1].Columns[Color]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Color"
+                      lineageId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[Color]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[Color]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 1].Columns[SalesOrderNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="SalesOrderNumber"
+                      lineageId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[SalesOrderNumber]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[SalesOrderNumber]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 1].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      lineageId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[UnitPrice]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[UnitPrice]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 1].Columns[ExtendedAmount]"
+                      cachedDataType="cy"
+                      cachedName="ExtendedAmount"
+                      lineageId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[ExtendedAmount]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[ExtendedAmount]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 1].Columns[ProductStandardCost]"
+                      cachedDataType="cy"
+                      cachedName="ProductStandardCost"
+                      lineageId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[ProductStandardCost]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[ProductStandardCost]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 1].Columns[TotalProductCost]"
+                      cachedDataType="cy"
+                      cachedName="TotalProductCost"
+                      lineageId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[TotalProductCost]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[TotalProductCost]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 1].Columns[SalesAmount]"
+                      cachedDataType="cy"
+                      cachedName="SalesAmount"
+                      lineageId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[SalesAmount]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[SalesAmount]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 1].Columns[TaxAmt]"
+                      cachedDataType="cy"
+                      cachedName="TaxAmt"
+                      lineageId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[TaxAmt]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[TaxAmt]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 1].Columns[Freight]"
+                      cachedDataType="cy"
+                      cachedName="Freight"
+                      lineageId="Package\Data Flow Task\Merge.Outputs[Merge Output 1].Columns[Freight]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[Freight]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 2]"
+                  name="Merge Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 2].Columns[EnglishProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[EnglishProductName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[EnglishProductName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 2].Columns[Color]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Color"
+                      lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[Color]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[Color]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 2].Columns[SalesOrderNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="SalesOrderNumber"
+                      lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[SalesOrderNumber]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[SalesOrderNumber]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 2].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[UnitPrice]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[UnitPrice]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 2].Columns[ExtendedAmount]"
+                      cachedDataType="cy"
+                      cachedName="ExtendedAmount"
+                      lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[ExtendedAmount]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[ExtendedAmount]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 2].Columns[ProductStandardCost]"
+                      cachedDataType="cy"
+                      cachedName="ProductStandardCost"
+                      lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[ProductStandardCost]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[ProductStandardCost]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 2].Columns[TotalProductCost]"
+                      cachedDataType="cy"
+                      cachedName="TotalProductCost"
+                      lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[TotalProductCost]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[TotalProductCost]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 2].Columns[SalesAmount]"
+                      cachedDataType="cy"
+                      cachedName="SalesAmount"
+                      lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[SalesAmount]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[SalesAmount]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 2].Columns[TaxAmt]"
+                      cachedDataType="cy"
+                      cachedName="TaxAmt"
+                      lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[TaxAmt]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[TaxAmt]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 2].Columns[Freight]"
+                      cachedDataType="cy"
+                      cachedName="Freight"
+                      lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[Freight]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[Freight]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1]"
+                  isSorted="true"
+                  name="Merge Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[EnglishProductName]"
+                      name="EnglishProductName"
+                      sortKeyPosition="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[Color]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[Color]"
+                      name="Color" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[SalesOrderNumber]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[SalesOrderNumber]"
+                      name="SalesOrderNumber" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[UnitPrice]"
+                      name="UnitPrice" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[ExtendedAmount]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[ExtendedAmount]"
+                      name="ExtendedAmount" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[ProductStandardCost]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[ProductStandardCost]"
+                      name="ProductStandardCost" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[TotalProductCost]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[TotalProductCost]"
+                      name="TotalProductCost" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[SalesAmount]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[SalesAmount]"
+                      name="SalesAmount" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[TaxAmt]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[TaxAmt]"
+                      name="TaxAmt" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[Freight]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[Freight]"
+                      name="Freight" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[MergeDestination]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{C61D7E43-EADB-4274-B4E4-FE6A3F5B0459}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[PUJALTOP_BILearning]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EnglishProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EnglishProductName]"
+                      lineageId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[EnglishProductName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Color]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Color"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Color]"
+                      lineageId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[Color]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SalesOrderNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="SalesOrderNumber"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderNumber]"
+                      lineageId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[SalesOrderNumber]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ExtendedAmount]"
+                      cachedDataType="cy"
+                      cachedName="ExtendedAmount"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExtendedAmount]"
+                      lineageId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[ExtendedAmount]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProductStandardCost]"
+                      cachedDataType="cy"
+                      cachedName="ProductStandardCost"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductStandardCost]"
+                      lineageId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[ProductStandardCost]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TotalProductCost]"
+                      cachedDataType="cy"
+                      cachedName="TotalProductCost"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalProductCost]"
+                      lineageId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[TotalProductCost]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SalesAmount]"
+                      cachedDataType="cy"
+                      cachedName="SalesAmount"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesAmount]"
+                      lineageId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[SalesAmount]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TaxAmt]"
+                      cachedDataType="cy"
+                      cachedName="TaxAmt"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TaxAmt]"
+                      lineageId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[TaxAmt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Freight]"
+                      cachedDataType="cy"
+                      cachedName="Freight"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Freight]"
+                      lineageId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1].Columns[Freight]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Color]"
+                      dataType="wstr"
+                      length="15"
+                      name="Color" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderNumber]"
+                      dataType="wstr"
+                      length="20"
+                      name="SalesOrderNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExtendedAmount]"
+                      dataType="cy"
+                      name="ExtendedAmount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductStandardCost]"
+                      dataType="cy"
+                      name="ProductStandardCost" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalProductCost]"
+                      dataType="cy"
+                      name="TotalProductCost" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesAmount]"
+                      dataType="cy"
+                      name="SalesAmount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TaxAmt]"
+                      dataType="cy"
+                      name="TaxAmt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Freight]"
+                      dataType="cy"
+                      name="Freight" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort.Inputs[Sort Input].Columns[EnglishProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[EnglishProductName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort.Inputs[Sort Input].Columns[Color]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Color"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[Color]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort.Inputs[Sort Input].Columns[SalesOrderNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="SalesOrderNumber"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[SalesOrderNumber]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort.Inputs[Sort Input].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[UnitPrice]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort.Inputs[Sort Input].Columns[ExtendedAmount]"
+                      cachedDataType="cy"
+                      cachedName="ExtendedAmount"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[ExtendedAmount]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort.Inputs[Sort Input].Columns[ProductStandardCost]"
+                      cachedDataType="cy"
+                      cachedName="ProductStandardCost"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[ProductStandardCost]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort.Inputs[Sort Input].Columns[TotalProductCost]"
+                      cachedDataType="cy"
+                      cachedName="TotalProductCost"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[TotalProductCost]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort.Inputs[Sort Input].Columns[SalesAmount]"
+                      cachedDataType="cy"
+                      cachedName="SalesAmount"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[SalesAmount]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort.Inputs[Sort Input].Columns[TaxAmt]"
+                      cachedDataType="cy"
+                      cachedName="TaxAmt"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[TaxAmt]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort.Inputs[Sort Input].Columns[Freight]"
+                      cachedDataType="cy"
+                      cachedName="Freight"
+                      lineageId="Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[Freight]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[EnglishProductName]"
+                      name="EnglishProductName"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[EnglishProductName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Color]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Color]"
+                      name="Color">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[Color]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[SalesOrderNumber]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[SalesOrderNumber]"
+                      name="SalesOrderNumber">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[SalesOrderNumber]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[UnitPrice]"
+                      name="UnitPrice">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[UnitPrice]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[ExtendedAmount]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[ExtendedAmount]"
+                      name="ExtendedAmount">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[ExtendedAmount]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[ProductStandardCost]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[ProductStandardCost]"
+                      name="ProductStandardCost">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[ProductStandardCost]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[TotalProductCost]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[TotalProductCost]"
+                      name="TotalProductCost">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[TotalProductCost]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[SalesAmount]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[SalesAmount]"
+                      name="SalesAmount">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[SalesAmount]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[TaxAmt]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[TaxAmt]"
+                      name="TaxAmt">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[TaxAmt]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Freight]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Freight]"
+                      name="Freight">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\400.Outputs[OLE DB Source Output].Columns[Freight]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort 1.Inputs[Sort Input].Columns[EnglishProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[EnglishProductName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort 1.Inputs[Sort Input].Columns[Color]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Color"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[Color]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort 1.Inputs[Sort Input].Columns[SalesOrderNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="SalesOrderNumber"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[SalesOrderNumber]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort 1.Inputs[Sort Input].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[UnitPrice]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort 1.Inputs[Sort Input].Columns[ExtendedAmount]"
+                      cachedDataType="cy"
+                      cachedName="ExtendedAmount"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[ExtendedAmount]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort 1.Inputs[Sort Input].Columns[ProductStandardCost]"
+                      cachedDataType="cy"
+                      cachedName="ProductStandardCost"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[ProductStandardCost]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort 1.Inputs[Sort Input].Columns[TotalProductCost]"
+                      cachedDataType="cy"
+                      cachedName="TotalProductCost"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[TotalProductCost]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort 1.Inputs[Sort Input].Columns[SalesAmount]"
+                      cachedDataType="cy"
+                      cachedName="SalesAmount"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[SalesAmount]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort 1.Inputs[Sort Input].Columns[TaxAmt]"
+                      cachedDataType="cy"
+                      cachedName="TaxAmt"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[TaxAmt]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort 1.Inputs[Sort Input].Columns[Freight]"
+                      cachedDataType="cy"
+                      cachedName="Freight"
+                      lineageId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[Freight]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[EnglishProductName]"
+                      name="EnglishProductName"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[EnglishProductName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[Color]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[Color]"
+                      name="Color">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[Color]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[SalesOrderNumber]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[SalesOrderNumber]"
+                      name="SalesOrderNumber">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[SalesOrderNumber]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[UnitPrice]"
+                      name="UnitPrice">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[UnitPrice]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[ExtendedAmount]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[ExtendedAmount]"
+                      name="ExtendedAmount">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[ExtendedAmount]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[ProductStandardCost]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[ProductStandardCost]"
+                      name="ProductStandardCost">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[ProductStandardCost]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[TotalProductCost]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[TotalProductCost]"
+                      name="TotalProductCost">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[TotalProductCost]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[SalesAmount]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[SalesAmount]"
+                      name="SalesAmount">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[SalesAmount]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[TaxAmt]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[TaxAmt]"
+                      name="TaxAmt">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[TaxAmt]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[Freight]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[Freight]"
+                      name="Freight">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output].Columns[Freight]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Sort 2"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 2"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Sort 2.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort 2.Inputs[Sort Input].Columns[EnglishProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[EnglishProductName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort 2.Inputs[Sort Input].Columns[Color]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Color"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[Color]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort 2.Inputs[Sort Input].Columns[SalesOrderNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="SalesOrderNumber"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[SalesOrderNumber]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort 2.Inputs[Sort Input].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[UnitPrice]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort 2.Inputs[Sort Input].Columns[ExtendedAmount]"
+                      cachedDataType="cy"
+                      cachedName="ExtendedAmount"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[ExtendedAmount]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort 2.Inputs[Sort Input].Columns[ProductStandardCost]"
+                      cachedDataType="cy"
+                      cachedName="ProductStandardCost"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[ProductStandardCost]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort 2.Inputs[Sort Input].Columns[TotalProductCost]"
+                      cachedDataType="cy"
+                      cachedName="TotalProductCost"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[TotalProductCost]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort 2.Inputs[Sort Input].Columns[SalesAmount]"
+                      cachedDataType="cy"
+                      cachedName="SalesAmount"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[SalesAmount]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort 2.Inputs[Sort Input].Columns[TaxAmt]"
+                      cachedDataType="cy"
+                      cachedName="TaxAmt"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[TaxAmt]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort 2.Inputs[Sort Input].Columns[Freight]"
+                      cachedDataType="cy"
+                      cachedName="Freight"
+                      lineageId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[Freight]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Sort 2.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[EnglishProductName]"
+                      name="EnglishProductName"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[EnglishProductName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[Color]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[Color]"
+                      name="Color">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[Color]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[SalesOrderNumber]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[SalesOrderNumber]"
+                      name="SalesOrderNumber">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[SalesOrderNumber]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[UnitPrice]"
+                      name="UnitPrice">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[UnitPrice]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[ExtendedAmount]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[ExtendedAmount]"
+                      name="ExtendedAmount">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[ExtendedAmount]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[ProductStandardCost]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[ProductStandardCost]"
+                      name="ProductStandardCost">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[ProductStandardCost]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[TotalProductCost]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[TotalProductCost]"
+                      name="TotalProductCost">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[TotalProductCost]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[SalesAmount]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[SalesAmount]"
+                      name="SalesAmount">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[SalesAmount]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[TaxAmt]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[TaxAmt]"
+                      name="TaxAmt">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[TaxAmt]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[Freight]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[Freight]"
+                      name="Freight">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\2000.Outputs[OLE DB Source Output].Columns[Freight]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Merge Output 1]"
+              endId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 1]"
+              name="Merge Output 1"
+              startId="Package\Data Flow Task\Merge.Outputs[Merge Output 1]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Merge Output 11]"
+              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Merge Output 1"
+              startId="Package\Data Flow Task\Merge 1.Outputs[Merge Output 1]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Sort.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\400.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+              endId="Package\Data Flow Task\Sort 1.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\400_2000.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output2]"
+              endId="Package\Data Flow Task\Sort 2.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\2000.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sort Output]"
+              endId="Package\Data Flow Task\Merge.Inputs[Merge Input 1]"
+              name="Sort Output"
+              startId="Package\Data Flow Task\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sort Output1]"
+              endId="Package\Data Flow Task\Merge.Inputs[Merge Input 2]"
+              name="Sort Output"
+              startId="Package\Data Flow Task\Sort 1.Outputs[Sort Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sort Output2]"
+              endId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 2]"
+              name="Sort Output"
+              startId="Package\Data Flow Task\Sort 2.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{fae71959-b0e3-46ad-9884-53e463a254a5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C61D7E43-EADB-4274-B4E4-FE6A3F5B0459}"
+          SQLTask:SqlStatementSource="truncate table [dbo].[MergeDestination];&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{E8CB760F-6E2B-45DA-8F8F-749A90835445}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task"
+          TopLeft="379,212" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="201,65" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="282.5,107">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="172,105"
+              Start="0,0"
+              End="172,97.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,48.5"
+                    Point2="0,52.5"
+                    Point3="4,52.5" />
+                  <mssgle:LineSegment
+                    End="168,52.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="168,52.5"
+                    Point2="172,52.5"
+                    Point3="172,56.5" />
+                  <mssgle:LineSegment
+                    End="172,97.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="96,42"
+          Id="Package\Data Flow Task\400"
+          TopLeft="25,28" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Data Flow Task\400_2000"
+          TopLeft="157,26" />
+        <NodeLayout
+          Size="108,42"
+          Id="Package\Data Flow Task\Merge"
+          TopLeft="84,178" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Data Flow Task\Sort"
+          TopLeft="25,76" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="25,49">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="-7.5,48">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,44" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,44"
+                    Point2="-22.5,48"
+                    Point3="-18.5,48" />
+                  <mssgle:LineSegment
+                    End="-7.5,48" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Data Flow Task\Sort 1"
+          TopLeft="160,75" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+          TopLeft="157,47">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="3,49"
+              Start="0,0"
+              End="-4.5,49">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,45" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,45"
+                    Point2="-22.5,49"
+                    Point3="-18.5,49" />
+                  <mssgle:LineSegment
+                    End="-4.5,49" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output]"
+          TopLeft="74,118">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="47.3333333333333,60"
+              Start="0,0"
+              End="47.3333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.4744525547445" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.4744525547445"
+                    Point2="0,35.4744525547445"
+                    Point3="4,35.4744525547445" />
+                  <mssgle:LineSegment
+                    End="43.3333333333333,35.4744525547445" />
+                  <mssgle:CubicBezierSegment
+                    Point1="43.3333333333333,35.4744525547445"
+                    Point2="47.3333333333333,35.4744525547445"
+                    Point3="47.3333333333333,39.4744525547445" />
+                  <mssgle:LineSegment
+                    End="47.3333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output1]"
+          TopLeft="223,117">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-68.3333333333333,61"
+              Start="0,0"
+              End="-68.3333333333333,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.0656934306569" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.0656934306569"
+                    Point2="0,36.0656934306569"
+                    Point3="-4,36.0656934306569" />
+                  <mssgle:LineSegment
+                    End="-64.3333333333333,36.0656934306569" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-64.3333333333333,36.0656934306569"
+                    Point2="-68.3333333333333,36.0656934306569"
+                    Point3="-68.3333333333333,40.0656934306569" />
+                  <mssgle:LineSegment
+                    End="-68.3333333333333,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="102,42"
+          Id="Package\Data Flow Task\2000"
+          TopLeft="329,24" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Data Flow Task\Sort 2"
+          TopLeft="333,79" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output2]"
+          TopLeft="329,45">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="4,55"
+              Start="0,0"
+              End="-3.5,55">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,51" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,51"
+                    Point2="-22.5,55"
+                    Point3="-18.5,55" />
+                  <mssgle:LineSegment
+                    End="-3.5,55" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="117,42"
+          Id="Package\Data Flow Task\Merge 1"
+          TopLeft="324,174" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Merge Output 1]"
+          TopLeft="192,197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="132,0"
+              Start="0,0"
+              End="124.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="124.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output2]"
+          TopLeft="384.5,121">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="297,293" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Merge Output 11]"
+          TopLeft="382.5,216">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77"
+              Start="0,0"
+              End="0,69.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\400">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\400_2000">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\2000">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
